@@ -1,3 +1,23 @@
+//Using the apply and call methods
+
+function junggle(){
+    var result = 0;
+    for (let n = 0; n < arguments.length; n++) {
+        result += arguments[n];
+    }
+
+    this.result = result;
+}
+
+var junggle1 = {};
+var junggle2 = {};
+
+junggle.apply(junggle1,[1,2,3,4]);
+junggle.call(junggle2,5,6,7,8)
+
+console.assert(junggle1.result === 10,"junggled via apply");
+console.assert(junggle2.result === 26,"junggled via call");
+
 // Constructors explicitly returning object values 
 
 
@@ -16,7 +36,6 @@ var emperor = new Emperor();
 
 console.assert(emperor === puppet,"The emperor is merely a puppet");
 console.assert(emperor.rules === false,"The puppet does not know how to rule!");
-
 
 
 

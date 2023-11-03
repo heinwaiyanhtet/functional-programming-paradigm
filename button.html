@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="test"> Click Me!</button>
+    <script>
+        // console.assert(this === window,"this === window");
+        // test with object
+        // var button = 
+        // {
+        //     clicked : false,
+        //     click : () => 
+        //     {
+        //         this.clicked = true;
+        //         console.assert(button.clicked,"the button has been clicked");
+        //         console.assert(this === window,"In arrow function this === window");
+        //         console.assert(window.clicked,"clicked is stored in window");
+        //     }
+
+        // }
+
+
+        // function Button()
+        // {
+        //     this.clicked = false;
+        //     this.click = () => {
+        //         this.clicked = true;
+        //         console.assert(button.clicked,"The button has been clicked");
+        //         // it will fail
+        //         console.assert(this === window,"In arrow function this === window");
+        //         console.assert(button.clicked,"The button has been clicked")
+        //     }
+        // }
+        // var button = new Button();
+
+
+        // var elem = document.getElementById("test");
+        // elem.addEventListener("click",button.click);
+
+        var button = {
+        clicked: false,
+        click: function(){
+        this.clicked = true;
+        console.assert(button.clicked,"The button has been clicked");
+        }
+        };
+        var elem = document.getElementById("test");
+        elem.addEventListener("click", button.click.bind(button));
+        var boundFunction = button.click.bind(button);
+        console.assert(boundFunction != button.click, 
+        "Calling bind creates a completly new function");
+    </script>
+
+</body>
+</html>
