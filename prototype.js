@@ -1,19 +1,62 @@
-function Ninja() {
-
-    this.swung = false;
-
-    this.swingSword = function()
-    {
-        return !this.swung;
-    }
-
-}
-
-Ninja.prototype.swingSword = function(){
-    return this.swung;
-}
-
+function Ninja(){}
 const ninja = new Ninja();
+
+console.assert(typeof ninja === "object",
+      "The type of the instance is object."
+      )
+
+      console.assert(ninja instanceof Ninja, 
+        "instanceof identifies the constructor." );
+
+
+
+
+
+// function Ninja()
+// {
+//     this.swung = true; 
+// }
+
+// const ninja1 = new Ninja();
+
+// Ninja.prototype.swingSword = function()
+// {
+//     return this.swung;
+// };
+
+// console.assert(ninja1.swingSword(),"Method exists , even out of order");
+
+// Ninja.prototype = {
+//     pierce : function(){
+//         return true; 
+//     }
+// }
+
+// console.assert(ninja1.swingSword(), 
+//  "Our ninja can still swing!"); 
+
+
+//  const ninja2 = new Ninja(); 
+//  console.assert(ninja2.pierce(),"Newly created ninjas can pierce");
+//  console.assert(!ninja2.swingSword, "But they cannot swing!");  
+
+
+// function Ninja() {
+
+//     this.swung = false;
+
+//     this.swingSword = function()
+//     {
+//         return !this.swung;
+//     }
+
+// }
+
+// Ninja.prototype.swingSword = function(){
+//     return this.swung;
+// }
+
+// const ninja = new Ninja();
 
 
 
