@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function ShowItself2(identity) {
+            this.identity = identity;
+
+            const that = this;
+
+            setTimeout(function ()  {
+                console.log(this.identity)
+            }, 1000);
+
+          
+             setTimeout(function(){
+                console.log(this.identity)
+             }.bind(this),2000)
+
+             
+             setTimeout(() => {
+                 console.log(this.identity);
+             }, 3000);
+            }
+
+        ShowItself2("hello");
+
+    </script>
+</body>
+</html>
