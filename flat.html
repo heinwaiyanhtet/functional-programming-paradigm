@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+
+    const numbers = [1,2,[3,4,5]];
+    const flatNumbers = numbers.flat();
+    console.log(flatNumbers);
+
+
+    const twoDepthNumbers = [1,2,[3,4,5,[6,7]]];
+    const flattwoDepthNumbers = twoDepthNumbers.flat(2);
+    console.log(flattwoDepthNumbers);
+    
+    const infinityForNumbers = [1,2,[3,4,5,[6,7,[8,9]]]]
+    const infinityFlatNumbers = infinityForNumbers.flat(Infinity);
+    console.log(infinityFlatNumbers);
+
+    const emptySlot = [1,2,3,4, ,5];
+    const emptySequnce = emptySlot.flat();
+    console.log(emptySequnce);
+
+</script>
+</html>
