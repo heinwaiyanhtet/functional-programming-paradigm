@@ -11,23 +11,81 @@
 
 <script>
 
+    // const numbers = [1,2,[3,4,5]];
+    // const flatNumbers = numbers.flat();
+    // console.log(flatNumbers);
 
-    const numbers = [1,2,[3,4,5]];
-    const flatNumbers = numbers.flat();
-    console.log(flatNumbers);
-
-
-    const twoDepthNumbers = [1,2,[3,4,5,[6,7]]];
-    const flattwoDepthNumbers = twoDepthNumbers.flat(2);
-    console.log(flattwoDepthNumbers);
+    // const twoDepthNumbers = [1,2,[3,4,5,[6,7]]];
+    // const flattwoDepthNumbers = twoDepthNumbers.flat(2);
+    // console.log(flattwoDepthNumbers);
     
-    const infinityForNumbers = [1,2,[3,4,5,[6,7,[8,9]]]]
-    const infinityFlatNumbers = infinityForNumbers.flat(Infinity);
-    console.log(infinityFlatNumbers);
+    // const infinityForNumbers = [1,2,[3,4,5,[6,7,[8,9]]]]
+    // const infinityFlatNumbers = infinityForNumbers.flat(Infinity);
+    // console.log(infinityFlatNumbers);
 
-    const emptySlot = [1,2,3,4, ,5];
-    const emptySequnce = emptySlot.flat();
-    console.log(emptySequnce);
+    // const emptySlot = [1,2,3,4, ,5];
+    // const emptySequnce = emptySlot.flat();
+    // console.log(emptySequnce);
+
+
+
+    let apiAnswer = [
+        {
+            country: "AR",
+            name: "Argentine",
+            states: [
+                {
+                state: "1",
+                name: "Buenos Aires",
+                cities: [{city: 3846864, name: "Lincoln"}],
+                },
+            ]
+        },
+
+        {
+
+            country: "GB",
+            name: "Great Britain",
+            states: [
+                {
+                state: "ENG",
+                name: "England",
+                cities: [{city: 2644487, name: "Lincoln"}],
+                },
+            ],
+
+        },
+
+        {
+            country: "US",
+            name: "United States of America",
+            states: [
+                {
+                    state: "CA",
+                    name: "California",
+                    cities: [{city: 5072006, name: "Lincoln"}],
+                },
+    
+                {
+                    state: "IL",
+                    name: "Illinois",
+                    cities: [
+                        {city: 4899911, name: "Lincoln Park"},
+                        {city: 4899966, name: "Lincoln Square"},
+                    ],
+                },
+            ],
+        },
+    ]
+
+    console.log
+      (
+        apiAnswer.map(x => x.states)
+                 .flat()
+                 .map(y => y.cities)
+                 .flat()
+      )
+
 
 </script>
 </html>
