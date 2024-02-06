@@ -16,3 +16,6 @@ console.log(leadingThirtySevenList(1, 2, 3)); // [37, 1, 2, 3]
 
 console.log(addThirtySeven(5)); // 42
 console.log(addThirtySeven(5, 10));
+
+
+// https://javascript.info/bind
